@@ -1,1 +1,164 @@
-style.css
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #050816;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 50% 20%, #102b55 0%, #050816 45%);
+}
+
+.topbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0, 200, 255, 0.15);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-orb {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #00d9ff;
+  box-shadow:
+    0 0 10px #00d9ff,
+    0 0 30px #0077ff;
+}
+
+.logo h1 {
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+.logo span {
+  font-size: 9px;
+  color: #6d9bbd;
+  letter-spacing: 2px;
+}
+
+.status {
+  color: #67e8f9;
+  font-size: 11px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #00ff9d;
+  box-shadow: 0 0 10px #00ff9d;
+}
+
+.chat {
+  flex: 1;
+  padding: 30px 20px;
+  overflow-y: auto;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.big-orb {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #b8f6ff, #008cff 40%, #001d52 70%);
+  box-shadow:
+    0 0 20px #00d9ff,
+    0 0 60px #0077ff,
+    0 0 100px rgba(0, 217, 255, 0.4);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.welcome h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #8ba8c4;
+  line-height: 1.6;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid rgba(0, 200, 255, 0.15);
+  background: rgba(3, 10, 25, 0.9);
+}
+
+input {
+  flex: 1;
+  border: 1px solid #163b5c;
+  border-radius: 15px;
+  padding: 15px;
+  outline: none;
+  color: white;
+  background: #081326;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.icon-button,
+.send-button {
+  border: none;
+  width: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-button {
+  background: #10233d;
+}
+
+.send-button {
+  background: #0077ff;
+}
+
+.icon-button:hover,
+.send-button:hover {
+  filter: brightness(1.3);
+}
