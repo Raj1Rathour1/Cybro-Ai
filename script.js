@@ -47,7 +47,7 @@ async function cybroReply(text) {
   addMessage("Thinking...", "cybro");
 
   try {
-    const response = await fetch("/api/chat", {
+    const response = await fetch("https://cybro-90y9gyh6c-irotech.vercel.app/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
