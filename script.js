@@ -43,13 +43,51 @@ function speak(text) {
   window.speechSynthesis.speak(speech);
 }
 
-function cybroReply(text) {
-  const reply =
-    "I heard you say: " + text +
-    ". My AI brain will be connected next.";
+async function cybroReply(text) {
+  addMessage("Thinking...", "cybro");
 
-  addMessage(reply, "cybro");
-  speak(reply);
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: text
+      })
+    });
+
+    const data = await response.json();
+
+    // Remove the temporary "Thinking..." message
+    const messages = chat.children;
+    if (messages.length > 0) {
+      messages[messages.length - 1].remove();
+    }
+
+    if (!response.ok) {
+      throw new Error(data.error || "AI request failed");
+    }
+
+    const reply = data.reply || "I couldn't generate a response.";
+
+    addMessage(reply, "cybro");
+    speak(reply);
+
+  } catch (error) {
+    console.error(error);
+
+    const messages = chat.children;
+    if (messages.length > 0) {
+      messages[messages.length - 1].remove();
+    }
+
+    const errorMessage =
+      "Sorry, I couldn't connect to my AI brain.";
+
+    addMessage(errorMessage, "cybro");
+    speak(errorMessage);
+  }
 }
 
 function sendMessage() {
