@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybro AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+      <div class="logo">
+        <div class="logo-orb"></div>
+        <div>
+          <h1>CYBRO</h1>
+          <span>AI ASSISTANT</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        ONLINE
+      </div>
+    </header>
+
+    <main class="chat" id="chat">
+
+      <div class="welcome">
+        <div class="big-orb"></div>
+
+        <h2>Hello, I'm Cybro.</h2>
+
+        <p>
+          Your personal AI assistant.
+          <br>
+          Ask me anything.
+        </p>
+      </div>
+
+    </main>
+
+    <div class="input-area">
+
+      <button id="micButton" class="icon-button">
+        🎙️
+      </button>
+
+      <input
+        id="messageInput"
+        type="text"
+        placeholder="Talk to Cybro..."
+        autocomplete="off"
+      >
+
+      <button id="sendButton" class="send-button">
+        ➤
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
